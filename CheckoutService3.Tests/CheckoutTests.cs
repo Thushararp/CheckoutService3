@@ -41,5 +41,18 @@ namespace CheckoutService3.Tests
             Assert.True(checkout.ScannedItems.ContainsKey(sku));
             Assert.Equal(1, checkout.ScannedItems[sku]);
         }
+        
+       [Fact]
+        public void Scan_InvalidSKU_ShouldNotAddItemToScannedItems()
+        {
+            // Arrange
+            string sku = "X";
+
+            // Act
+            checkout.Scan(sku);
+
+            // Assert
+            Assert.False(checkout.ScannedItems.ContainsKey(sku));
+        }
     }
 }
