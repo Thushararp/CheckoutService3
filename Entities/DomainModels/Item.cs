@@ -1,4 +1,4 @@
-﻿namespace CheckoutService3.DomainModels
+﻿namespace Entities.DomainModels
 {
     public class Item
     {

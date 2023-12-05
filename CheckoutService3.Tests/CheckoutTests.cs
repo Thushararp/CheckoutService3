@@ -54,5 +54,88 @@ namespace CheckoutService3.Tests
             // Assert
             Assert.False(checkout.ScannedItems.ContainsKey(sku));
         }
+
+        //generate unit tests for the GetTotalPrice method
+        [Fact]
+            public void GetTotalPrice_NoItemsScanned_ShouldReturnZero()
+        {
+            // Arrange
+            checkout.ScannedItems.Clear();
+
+            // Act
+            var result = checkout.GetTotalPrice();
+
+            // Assert
+            Assert.Equal(0, result);
+        }
+        [Fact]
+        public void GetTotalPrice_OneItemScanned_ShouldReturnCorrectPrice()
+        {
+            // Arrange
+            checkout.ScannedItems.Clear();
+            checkout.ScannedItems.Add("A", 1);
+
+            // Act
+            var result = checkout.GetTotalPrice();
+
+            // Assert
+            Assert.Equal(50, result);
+        }
+        [Fact]
+           public void GetTotalPrice_TwoItemsScanned_ShouldReturnCorrectPrice()
+        {
+            // Arrange
+            checkout.ScannedItems.Clear();
+            checkout.ScannedItems.Add("A", 2);
+
+            // Act
+            var result = checkout.GetTotalPrice();
+
+            // Assert
+            Assert.Equal(100, result);
+        }
+        [Fact]
+           public void GetTotalPrice_ThreeItemsScanned_ShouldReturnCorrectPrice()
+        {
+            // Arrange
+            checkout.ScannedItems.Clear();
+            checkout.ScannedItems.Add("A", 3);
+
+            // Act
+            var result = checkout.GetTotalPrice();
+
+            // Assert
+            Assert.Equal(130, result);
+        }
+        [Fact]
+           public void GetTotalPrice_FourItemsScanned_ShouldReturnCorrectPrice()
+        {
+            // Arrange
+            checkout.ScannedItems.Clear();
+            checkout.ScannedItems.Add("A", 4);
+
+            // Act
+            var result = checkout.GetTotalPrice();
+
+            // Assert
+            Assert.Equal(180, result);
+        }
+
+        [Fact]
+           public void GetTotalPrice_SixItemsScanned_ShouldReturnCorrectPrice()
+        {
+            // Arrange
+            checkout.ScannedItems.Clear();
+            checkout.ScannedItems.Add("A", 6);
+
+            // Act
+            var result = checkout.GetTotalPrice();
+
+            // Assert
+            Assert.Equal(260, result);
+        }
+
+
+        
     }
 }
