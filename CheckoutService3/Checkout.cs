@@ -1,7 +1,8 @@
-﻿using Entities.DomainModels;
-using Repository.Contracts;
+﻿using Repository.Contracts;
+using Service.Contracts;
 
-namespace CheckoutService3
+
+namespace Service
 {
     public class Checkout : ICheckout
     { 

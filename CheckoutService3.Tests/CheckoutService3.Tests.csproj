@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CheckoutService3\CheckoutService3.csproj" />
+    <ProjectReference Include="..\CheckoutService3\Service.csproj" />
   </ItemGroup>
 
 </Project>
